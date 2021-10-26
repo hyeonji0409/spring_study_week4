@@ -44,4 +44,5 @@ public class Article {
                 .content(from.getContent())
                 .build();
     }
+
 }

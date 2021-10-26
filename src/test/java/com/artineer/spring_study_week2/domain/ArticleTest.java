@@ -1,5 +1,6 @@
 package com.artineer.spring_study_week2.domain;
 
+import com.artineer.spring_study_week2.dto.ArticleDto;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,5 +21,20 @@ class ArticleTest {
         //then
         assertThat("title after").isEqualTo(article.getTitle());
         assertThat("content after").isEqualTo(article.getContent());
+    }
+    @Test
+    public void of_호출하면_Article_객체를_반환해야_한다() {
+        // given
+        ArticleDto.ReqPost request = ArticleDto.ReqPost.builder()
+                .title("title")
+                .content("content")
+                .build();
+
+        // when
+        Article article = Article.of(request);
+
+        // then
+        assertThat(article.getTitle()).isEqualTo("title");
+        assertThat(article.getContent()).isEqualTo("content");
     }
 }

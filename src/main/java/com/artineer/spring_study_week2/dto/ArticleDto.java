@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class ArticleDto {
     //생성 요청을 할 때 사용하는 객체 => 실제는 article로 변경되서 작용
     @Getter
+    @Builder
     public static class ReqPost {
         String title;
         String content;
